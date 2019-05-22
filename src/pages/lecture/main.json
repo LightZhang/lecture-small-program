@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "讲课",
+  "usingComponents": {
+    "van-icon": "/static/vant/lib/icon/index"
+  }
+}

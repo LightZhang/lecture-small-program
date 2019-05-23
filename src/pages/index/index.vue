@@ -1,10 +1,6 @@
 <template>
   <div>
-    <van-panel title="标题" desc="描述信息" status="状态">
-      <div>内容</div>
-    </van-panel>
 
-    <van-button type="primary">主要按钮</van-button>
   </div>
 </template>
 
@@ -16,8 +12,7 @@ export default {
     return {
       motto: 'Hello miniprograme',
       userInfo: {
-        nickName: 'mpvue',
-        avatarUrl: 'http://mpvue.com/assets/logo.png'
+
       }
     }
   },
@@ -27,23 +22,11 @@ export default {
   },
 
   methods: {
-    bindViewTap() {
-      const url = '../logs/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      } else {
-        mpvue.navigateTo({ url })
-      }
-    },
-    clickHandle(ev) {
-      console.log('clickHandle:', ev)
-    }
+
   },
 
-  created() {
+  mounted() {
 
-    let ss = wx.getRecorderManager();
-    ss.start();
 
   }
 }

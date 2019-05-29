@@ -21,10 +21,11 @@
       </div>
       <div class="btn-box">
         <van-button size="small" round type="info" @click="stopRecord">重做</van-button>
-        <van-button size="small" round type="info">保存</van-button>
+        <van-button size="small" round type="info" @click="saveRecord">保存</van-button>
       </div>
     </div>
 
+    <van-popup v-model="show" position="right">内容</van-popup>
   </div>
 
 </template>
@@ -37,6 +38,8 @@ export default {
       isPauseRecord: true,
       recorderManage: null,
       recorderSecond: 0,
+      show: false
+
 
     };
   },
@@ -73,7 +76,7 @@ export default {
 
 
     },
-
+    //开始录音
     startRecord() {
       let _this = this;
       _this.isPauseRecord = false;
@@ -86,12 +89,14 @@ export default {
       }, 1000);
 
     },
+    //暂停录音
     pauseRecord() {
       this.isPauseRecord = true;
       this.recorderManage.pause();
       clearInterval(recorderInterval);
       recorderInterval = null;
     },
+    //停止录音
     stopRecord() {
       this.isPauseRecord = true;
       this.recorderManage.stop();
@@ -99,7 +104,11 @@ export default {
       clearInterval(recorderInterval);
       recorderInterval = null;
     },
+    //保存录音
+    saveRecord() {
+      this.show = true;
 
+    }
 
 
   }

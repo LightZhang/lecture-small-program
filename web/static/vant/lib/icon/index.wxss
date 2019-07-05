@@ -4,7 +4,6 @@
   font-style: normal;
   font-weight: 400;
   font-family: vant-icon;
-  src: url(https://img.yzcdn.cn/vant/vant-icon-839a51.woff2) format("woff2"), url(https://img.yzcdn.cn/vant/vant-icon-839a51.woff) format("woff"), url(https://img.yzcdn.cn/vant/vant-icon-839a51.ttf) format("truetype")
 }
 
 .van-icon {

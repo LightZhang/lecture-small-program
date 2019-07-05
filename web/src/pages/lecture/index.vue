@@ -33,7 +33,7 @@
 <script>
 let recorderInterval = null;
 export default {
-  data() {
+  data () {
     return {
       isPauseRecord: true,
       recorderManage: null,
@@ -57,12 +57,12 @@ export default {
       return minute + ":" + second;
     }
   },
-  mounted() {
+  mounted () {
     this.init();
   },
   methods: {
 
-    init() {
+    init () {
       this.recorderManage = mpvue.getRecorderManager();
 
       this.recorderManage.onStart(function () {
@@ -77,7 +77,7 @@ export default {
 
     },
     //开始录音
-    startRecord() {
+    startRecord () {
       let _this = this;
       _this.isPauseRecord = false;
       _this.recorderManage.start();
@@ -90,14 +90,14 @@ export default {
 
     },
     //暂停录音
-    pauseRecord() {
+    pauseRecord () {
       this.isPauseRecord = true;
       this.recorderManage.pause();
       clearInterval(recorderInterval);
       recorderInterval = null;
     },
     //停止录音
-    stopRecord() {
+    stopRecord () {
       this.isPauseRecord = true;
       this.recorderManage.stop();
       this.recorderSecond = 0;
@@ -105,7 +105,7 @@ export default {
       recorderInterval = null;
     },
     //保存录音
-    saveRecord() {
+    saveRecord () {
       this.show = true;
 
     }
@@ -151,7 +151,7 @@ export default {
           width: 30px;
           height: 30px;
           border-radius: 50%;
-          border: solid 5px red;
+          border: solid 3px rgb(69, 127, 235);
           animation: floodlight 1s infinite;
           display: flex;
           justify-content: center;
@@ -179,9 +179,11 @@ export default {
 @keyframes floodlight {
   0% {
     padding: 0px;
+    opacity: 1;
   }
   100% {
-    padding: 15px;
+    padding: 28px;
+    opacity: 0;
   }
 }
 </style>

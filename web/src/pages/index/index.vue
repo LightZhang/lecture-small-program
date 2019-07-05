@@ -8,7 +8,7 @@
 import card from '@/components/card'
 
 export default {
-  data() {
+  data () {
     return {
       motto: 'Hello miniprograme',
       userInfo: {
@@ -25,14 +25,13 @@ export default {
 
   },
 
-  mounted() {
+  mounted () {
 
 
   }
 }
 </script>
-
-<style scoped>
+<style lang="less" scoped>
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -84,3 +83,4 @@ export default {
   background-color: green;
 }
 </style>
+

@@ -1,8 +1,10 @@
 <script>
 export default {
-  created() {
-
-
+  data () {
+  
+  },
+  created () {
+   
   }
 }
 </script>

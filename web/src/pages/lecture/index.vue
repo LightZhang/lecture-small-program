@@ -10,10 +10,9 @@
       <div class="paly-box">
 
         <div class="recor-circle">
-          <div class="recor-aminite">
+          <div :class="!isPauseRecord?'recor-aminite':'' ">
             <van-icon v-if="isPauseRecord" name="play" @click="startRecord" />
             <van-icon v-else name="pause" @click="pauseRecord" />
-
           </div>
 
         </div>
@@ -39,8 +38,6 @@ export default {
       recorderManage: null,
       recorderSecond: 0,
       show: false
-
-
     };
   },
   computed: {
@@ -151,7 +148,7 @@ export default {
           width: 30px;
           height: 30px;
           border-radius: 50%;
-          border: solid 3px rgb(69, 127, 235);
+          background: linear-gradient(135deg, #000781, #23b7cb);
           animation: floodlight 1s infinite;
           display: flex;
           justify-content: center;

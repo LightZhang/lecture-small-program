@@ -1,6 +1,37 @@
 <template>
-  <div>
+  <div class="index">
+    <div class="head">
+      <swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
+        <block v-for="item in imgUrls" :key="item">
+          <swiper-item>
+            <image :src="item" class="slide-image" width="355" height="150" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </div>
 
+    <div class="content">
+      <div class="recommended-today boder">
+        <div class="left">
+          <h2 class="title">今日推荐</h2>
+          <div class="today-news">感恩陈总缘系统如何带好团队</div>
+        </div>
+        <div class="right">
+          <van-icon name="like" />
+        </div>
+      </div>
+      <div class="boder">
+        <h2 class="title">新闻</h2>
+
+      </div>
+      <div class="boder">
+        <h2 class="title">推荐阅读</h2>
+
+      </div>
+      <div class="boder">
+        <h2 class="title">热点专题</h2>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -10,7 +41,15 @@ import card from '@/components/card'
 export default {
   data () {
     return {
-      motto: 'Hello miniprograme',
+      imgUrls: [
+        'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
+        'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
+        'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
+      ],
+      indicatorDots: true,
+      autoplay: false,
+      interval: 5000,
+      duration: 1000,
       userInfo: {
 
       }
@@ -32,55 +71,29 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.index {
+  box-sizing: border-box;
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20rpx;
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
+    .recommended-today {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 100px;
+    }
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 150px;
-}
-
-.form-control {
-  display: block;
-  padding: 0 12px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
-}
-.all {
-  width: 7.5rem;
-  height: 1rem;
-  background-color: blue;
-}
-.all:after {
-  display: block;
-  content: "";
-  clear: both;
-}
-.left {
-  float: left;
-  width: 3rem;
-  height: 1rem;
-  background-color: red;
-}
-
-.right {
-  float: left;
-  width: 4.5rem;
-  height: 1rem;
-  background-color: green;
+    .boder {
+      width: 100%;
+      border: solid 1px #e0dddd;
+      border-radius: 5px;
+      padding: 10rpx;
+      margin-top: 20rpx;
+    }
+  }
 }
 </style>
 

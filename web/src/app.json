@@ -40,6 +40,8 @@
   "usingComponents": {
     "van-icon": "/static/vant/lib/icon/index",
     "van-button": "/static/vant/lib/button/index",
-    "van-panel": "/static/vant/lib/panel/index"
+    "van-panel": "/static/vant/lib/panel/index",
+    "van-row": "/static/vant/lib/row/index",
+    "van-col": "/static/vant/lib/col/index"
   }
 }
